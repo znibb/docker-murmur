@@ -1,10 +1,8 @@
-# murmur (mumble-server) as RPi Docker image
+# Murmur (Mumble server) Docker image
 
-Files that needs adding before container is created:
-files/database/mumble-server.sqlite
-files/mumble-server.ini
-files/mumble-server.log
+## Before starting
+1. Create config: `docker config create murmur_config_v1 path/to/murmur.conf`
+2. Set SuperUser password: `echo "PASSWORD_HERE" | docker secret create murmur_su_pw -`
 
-Set 'SUPERUSER_PASSWORD' and 'FILES_DIR' in 'start.sh'.
-
-If you renamed any files update file names in 'files/start-murmurd.sh'.
+## Starting
+Deploy: `docker stack deploy -c docker-compose.yml murmur`
