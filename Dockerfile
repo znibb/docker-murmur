@@ -1,5 +1,5 @@
 FROM alpine:latest
-MAINTAINER pontus@grimdal.com
+MAINTAINER znibb@zkylark.se
 
 # Install murmur
 RUN apk add --no-cache murmur
