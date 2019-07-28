@@ -1,12 +1,15 @@
 # Murmur (Mumble server) in Docker
 - Linux x64
-- Deployed with Docker Swarm
+- Based on alpine
+- Deployed with docker-compose
 
 ## Before starting
-1. Clone/download this repo: `git clone https://github.com/znibb/docker-murmur`
-2. Create config: `docker config create murmur_config_v1 path/to/murmur.conf`
-  - NOTE Example config in files/
-3. Set SuperUser password: `echo "PASSWORD_HERE" | docker secret create murmur_su_pw -`
+1. Download:
+ * `docker-compose.yml`
+ * `files/murmur_default.conf` as `murmur.conf`
+ * `.env.default` as `.env`
+2. Set SuperUser password in `.env` (don't encapsulate password in quotation marks)
+3. Update murmur.conf as needed
 
 ## Starting
-Deploy: `docker stack deploy -c docker-stack.yml murmur`
+`docker-compose up -d`
