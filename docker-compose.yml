@@ -1,0 +1,24 @@
+version: "3.7"
+services:
+  murmur:
+    image: znibb/murmur:latest
+    container_name: murmur
+    env_file: .env
+    init: true
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "200k"
+        max-file: "10"
+    ports:
+     - "64738:64738"
+     - "6502:6502"
+    restart: unless-stopped
+    volumes:
+     - "/etc/timezone:/etc/timezone:ro"
+     - "/etc/localtime:/etc/localtime:ro"
+     - "murmur_data:/murmur"
+     - "./murmur.conf:/murmur/murmur.conf:ro"
+
+volumes:
+  murmur_data:
