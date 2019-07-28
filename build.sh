@@ -9,6 +9,6 @@ USERNAME=znibb
 # Image name
 IMAGE=murmur
 # Latest version pushed to Docker hub
-LATEST_VERSION=1
+LATEST_VERSION=2
 
 docker build -t $USERNAME/$IMAGE:latest .
