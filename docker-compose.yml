@@ -10,6 +10,7 @@ services:
       options:
         max-size: "200k"
         max-file: "10"
+    network_mode: bridge
     ports:
      - "64738:64738"
      - "6502:6502"
@@ -17,8 +18,8 @@ services:
     volumes:
      - "/etc/timezone:/etc/timezone:ro"
      - "/etc/localtime:/etc/localtime:ro"
-     - "murmur_data:/murmur"
+     - "data:/murmur"
      - "./murmur.conf:/murmur/murmur.conf:ro"
 
 volumes:
-  murmur_data:
+  data:
