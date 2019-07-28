@@ -1,13 +1,7 @@
 #!/bin/sh
 
-# Set folder ownership
-chown -R murmur:murmur /murmur
-
-# Retrieve SuperUser password
-su_pw=$(cat /run/secrets/SU_PW)
-
 # Set SuperUser password
-murmurd -ini /murmur/murmur.conf -supw $su_pw
+murmurd -ini /murmur/murmur.conf -supw $SUPERUSER_PASSWORD
 echo "SuperUser password set"
 
 # Start server

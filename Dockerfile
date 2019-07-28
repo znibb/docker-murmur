@@ -1,5 +1,6 @@
-FROM alpine:latest
-MAINTAINER znibb@zkylark.se
+FROM alpine:3.10
+
+LABEL maintainer="znibb <znibb@zkylark.se>"
 
 # Install murmur
 RUN apk add --no-cache murmur
